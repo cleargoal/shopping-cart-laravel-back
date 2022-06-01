@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AnonymousCartRequest;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
+use App\Http\Resources\CartResource;
 use App\Models\Cart;
+use Illuminate\Http\JsonResponse;
 
 class CartController extends Controller
 {
@@ -62,4 +65,17 @@ class CartController extends Controller
     {
         //
     }
+
+    /**
+     * Show Cart by anonymous uuid
+     *
+     * @param AnonymousCartRequest $request
+     * @return JsonResponse
+     */
+    public function anonymousCart(AnonymousCartRequest $request): JsonResponse
+    {
+        $anonymousCart = Cart::with('')->first();
+        return response()->json($anonymousCart !== null ? (new CartResource($anonymousCart)) : 'User not yet has cart');
+    }
+
 }

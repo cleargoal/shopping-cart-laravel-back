@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
 
             foreach ($data as $key => $item) {
                 Product::factory()
-                    ->create(['category_id' => $category->id, 'title' => $item, 'image' => $item . '_' . $key + 1]);
+                    ->create(['category_id' => $category->id, 'title' => $item, 'image' => $category->title . '_' . $key + 1]);
             }
         }
     }

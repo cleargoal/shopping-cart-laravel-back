@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAnonymousRequest extends FormRequest
+class AnonymousCartRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,9 @@ class StoreAnonymousRequest extends FormRequest
      */
     public function rules()
     {
+//        dd('request',$this->input());
         return [
-            //
+            'uuid' => 'required|uuid',
         ];
     }
 }
