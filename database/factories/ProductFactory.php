@@ -19,6 +19,7 @@ class ProductFactory extends Factory
         return [
             'category_id' => 0,
             'title' => '',
+            'slug' => '',
             'price' => rand(2, 111),
             'image' => '',
         ];

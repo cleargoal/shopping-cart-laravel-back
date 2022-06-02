@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class ProductSeeder extends Seeder
 {
@@ -26,7 +27,7 @@ class ProductSeeder extends Seeder
 
             foreach ($data as $key => $item) {
                 Product::factory()
-                    ->create(['category_id' => $category->id, 'title' => $item, 'image' => $category->title . '_' . $key + 1]);
+                    ->create(['category_id' => $category->id, 'title' => $item, 'slug' => Str::slug($item, '-'), 'image' => $category->title . '_' . $key + 1]);
             }
         }
     }

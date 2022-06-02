@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
 
         foreach ($categories as $category) {
             Category::factory()
-                ->create(['title' => $category]);
+                ->create(['title' => $category, 'alias' => $category,]);
         }
     }
 }

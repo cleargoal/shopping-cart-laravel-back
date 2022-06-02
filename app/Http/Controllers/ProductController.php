@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use Illuminate\Http\JsonResponse;
 
 class ProductController extends Controller
 {
@@ -62,4 +64,17 @@ class ProductController extends Controller
     {
         //
     }
+
+    /**
+     * Products by category
+     *
+     * @param
+     * @return JsonResponse
+     */
+    public function productsByCategory($categoryId): JsonResponse
+    {
+        $products = Product::where('category_id', $categoryId)->get();
+        return response()->json(ProductResource::collection($products));
+    }
+
 }

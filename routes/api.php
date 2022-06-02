@@ -24,3 +24,4 @@ Route::resource('/categories', \App\Http\Controllers\CategoryController::class);
 
 Route::get('/new-anonymous', [\App\Http\Controllers\AnonymousController::class, 'store'])->name('new.anonymous');
 Route::post('/user-cart/', [\App\Http\Controllers\CartController::class, 'anonymousCart'])->name('user.cart');
+Route::get('/products-by-category/{}')->name('products.by.category');
