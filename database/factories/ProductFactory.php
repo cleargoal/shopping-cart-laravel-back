@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory
@@ -19,9 +20,13 @@ class ProductFactory extends Factory
         return [
             'category_id' => 0,
             'title' => '',
+            'code' => Str::random(9),
             'slug' => '',
-            'price' => rand(2, 111),
+            "description" => "Product Description",
             'image' => '',
+            'price' => rand(2, 111),
+            "quantity" => rand(0, 50),
+            "rating" => rand(1,5),
         ];
     }
 }

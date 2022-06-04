@@ -18,8 +18,8 @@ class CategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'label' => ucfirst($this->title),
-            'to' => '/products?' . $this->title,
+            'label' => $this->title,
+            'to' => '/products?category=' . $this->alias,
         ];
     }
 }
