@@ -77,6 +77,7 @@ class ProductController extends Controller
         $products = Product::select('products.*')
         ->where('categories.alias', $alias)
             ->join('categories', 'products.category_id', 'categories.id')
+            ->orderBy('title')
             ->get();
         return response()->json(ProductResource::collection($products));
     }

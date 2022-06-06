@@ -13,7 +13,6 @@ return [
     'Grape Seeds',
     'Caraway Seeds',
     'Mustard Seeds',
-    'Creole seeds',
     'Watermelon seed',
     'Durian',
     'Poppy seed',

@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
         $categories = Category::all();
 
         foreach ($categories as $category) {
-            $data = include('database/seeders/src/' . $category->title . '.php');
+            $data = include('database/seeders/src/' . $category->alias . '.php');
 
             foreach ($data as $key => $item) {
                 Product::factory()

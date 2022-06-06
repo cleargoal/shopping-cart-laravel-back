@@ -1,5 +1,6 @@
 <?php
-return ["Apple",
+return [
+    "Apple",
     "Apricot",
     "Banana",
     "Blackberry",

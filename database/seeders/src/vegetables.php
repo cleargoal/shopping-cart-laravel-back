@@ -4,6 +4,7 @@ return [
     'Arugula',
     'Asparagus',
     'Pepper',
+    'Hot Pepper',
     'Beetroot',
     'Bok Choy',
     'Broccoli',
@@ -15,6 +16,7 @@ return [
     'Eggplant',
     'Garlic',
     'Onion',
+    'Red Onion',
     'Jicama',
     'Kale',
     'Kohlrabi',
@@ -32,4 +34,5 @@ return [
     'Watercress',
     'Zucchini',
     'Cucumber',
+    'Squash',
 ];
