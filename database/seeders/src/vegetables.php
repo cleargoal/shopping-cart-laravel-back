@@ -35,4 +35,5 @@ return [
     'Zucchini',
     'Cucumber',
     'Squash',
+    'Scallop',
 ];
