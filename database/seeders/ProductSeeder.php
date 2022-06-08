@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                         'category_id' => $category->id,
                         'title' => $item,
                         'slug' => Str::slug($item, '-'),
-                        'image' => Str::slug($category->alias . ' ' . $item),
+                        'image' => Str::slug($category->alias . ' ' . $item) . '.jpg',
                     ]);
             }
         }

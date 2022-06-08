@@ -20,5 +20,4 @@ return [
     'Jackfruit Seeds',
     'Lotus Seeds',
     'Nigella Seeds',
-    'Caraway Seeds',
 ];

@@ -24,7 +24,7 @@ class ProductFactory extends Factory
             'slug' => '',
             "description" => "Product Description",
             'image' => '',
-            'price' => rand(2, 111),
+            'price' => rand(42, 1119),
             "quantity" => rand(0, 50),
             "rating" => rand(1,5),
         ];

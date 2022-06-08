@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('description');
             $table->string('image');
-            $table->integer('price');
+            $table->integer('price')->comment('price in cents');
             $table->integer('quantity');
             $table->integer('rating');
             $table->timestamps();
