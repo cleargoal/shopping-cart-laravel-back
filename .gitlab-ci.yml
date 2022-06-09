@@ -13,4 +13,4 @@ deploy:
   only:
     - master
   tags:
-    - it-segment-site
+    - shopping-back
