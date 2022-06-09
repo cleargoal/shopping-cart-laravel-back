@@ -1,0 +1,16 @@
+variables:
+  GIT_STRATEGY: fetch
+  GIT_CLONE_PATH: $CI_BUILDS_DIR/shopping-back
+  GIT_CLEAN_FLAGS: -x -f -e **
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - echo "deployed"
+  only:
+    - master
+  tags:
+    - it-segment-site
