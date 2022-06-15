@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('entity_id')->comment('ID of category or product');
-            $table->enum('entity', ['category', 'product',])->default('category')->comment('is entity_id of category or product?');
-            $table->enum('type', ['perc', 'abs'])->default('perc')->comment('percentage or absolute');
-            $table->integer('amount');
-            $table->dateTime('expiration')->nullable();
+//            $table->unsignedBigInteger('entity_id')->comment('ID of category or product');
+//            $table->enum('entity', ['category', 'product',])->default('category')->comment('is entity_id of category or product?');
+//            $table->enum('type', ['perc', 'abs'])->default('perc')->comment('percentage or absolute');
+//            $table->integer('amount');
+//            $table->dateTime('expiration')->nullable();
             $table->string('title');
+            $table->text('requirements');
             $table->timestamps();
         });
     }
