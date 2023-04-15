@@ -21,7 +21,7 @@ class DiscountController extends Controller
      */
     public function index(): JsonResponse
     {
-//        return response()->json(DiscountResource::collection(Discount::all()));
+        return response()->json(DiscountResource::collection(Discount::all()));
     }
 
     /**
