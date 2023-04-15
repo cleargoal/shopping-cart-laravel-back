@@ -74,11 +74,12 @@ class ProductController extends Controller
      */
     public function productsByCategory($alias): JsonResponse
     {
-        $products = Product::select('products.*')
-        ->where('categories.alias', $alias)
-            ->join('categories', 'products.category_id', 'categories.id')
+        $products = Product::whereHas('category', function ($query) use ($alias) {
+            $query->where('alias', $alias);
+        })
             ->orderBy('title')
             ->get();
+
         return response()->json(ProductResource::collection($products));
     }
 
