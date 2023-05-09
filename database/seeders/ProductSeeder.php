@@ -37,8 +37,8 @@ class ProductSeeder extends Seeder
                     ->create([
                         'category_id' => $category->id,
                         'title' => $key,
-                        'slug' => Str::slug($item, '-'),
-                        'image' => Str::slug($category->alias . ' ' . $item) . '.jpg',
+                        'slug' => Str::slug($key, '-'),
+                        'image' => Str::slug($category->alias . ' ' . $key) . '.jpg',
                         'description' => $item,
                     ]);
             }
