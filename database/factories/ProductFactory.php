@@ -15,18 +15,18 @@ class ProductFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'category_id' => 0,
             'title' => '',
             'code' => Str::random(9),
             'slug' => '',
-            "description" => "Product Description",
+            "description" => '',
             'image' => '',
-            'price' => rand(42, 1119),
+            'price' => rand(72, 999),
             "quantity" => rand(0, 50),
-            "rating" => rand(1,5),
+            "rating" => rand(1, 5),
         ];
     }
 }

@@ -11,7 +11,11 @@ use Illuminate\Support\Str;
 
 class ProductSeeder extends Seeder
 {
-    protected array $cereals, $fruits, $nuts, $seeds, $vegetables;
+    protected array $cereals;
+    protected array $fruits;
+    protected array $nuts;
+    protected array $seeds;
+    protected array $vegetables;
     protected Collection $categories;
 
     /**
@@ -21,7 +25,9 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
+
         $categories = Category::all();
+
 
         foreach ($categories as $category) {
             $data = include('database/seeders/src/' . $category->alias . '.php');
@@ -30,9 +36,10 @@ class ProductSeeder extends Seeder
                 Product::factory()
                     ->create([
                         'category_id' => $category->id,
-                        'title' => $item,
+                        'title' => $key,
                         'slug' => Str::slug($item, '-'),
                         'image' => Str::slug($category->alias . ' ' . $item) . '.jpg',
+                        'description' => $item,
                     ]);
             }
         }

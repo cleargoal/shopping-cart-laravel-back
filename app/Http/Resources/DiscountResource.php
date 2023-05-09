@@ -17,7 +17,7 @@ class DiscountResource extends JsonResource
     {
         return [
             'title' => $this->title,
-            'requirements' => json_decode($this->requirements),
+            'data' => json_decode($this->requirements),
         ];
     }
 }
