@@ -1,5 +1,6 @@
 <?php
-return 
+
+return
 [
     'Blueberries' =>  'Small, sweet, and tangy berries that grow on shrubs in North America.',
     'Strawberries' =>  'Sweet and juicy heart-shaped berries with a bright red color and small, edible seeds on their surface.',
@@ -18,5 +19,6 @@ return
     'Marionberries' =>  'A type of blackberry with a rich, sweet flavor and a deep, purplish-red color.',
     'Goji Berries' =>  'Small, bright red berries that are known for their antioxidant properties and are often used in traditional Chinese medicine.',
     'Acai Berries' =>  'Small, purple berries that grow in the Amazon rainforest and are known for their high levels of antioxidants and nutrients.',
-    'Chokeberries' =>  'Small, tart berries that grow on bushes and are used in jams, jellies, and baked goods.'
+    'Chokeberries' =>  'Small, tart berries that grow on bushes and are used in jams, jellies, and baked goods.',
+    "Redcurrant" => "A small, tart fruit of a shrub with a translucent red skin and a slightly bitter flavor.",
 ];

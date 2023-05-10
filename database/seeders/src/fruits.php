@@ -1,4 +1,5 @@
 <?php
+
 return [
     "Apple" => "A crisp and juicy fruit with a slightly sweet and tart flavor.",
     "Apricot" => "A small, yellow-orange fruit with a soft, juicy flesh and a sweet, slightly tart flavor.",
@@ -28,7 +29,6 @@ return [
     "Pineapple" => "A tropical fruit with a tough, spiky skin and a sweet, juicy flesh.",
     "Plum" => "A small, sweet fruit with a juicy flesh and a smooth skin.",
     "Rambutan" => "A tropical fruit with a hairy, red skin and a sweet, juicy flesh with a large seed.",
-    "Redcurrant" => "A small, tart fruit with a translucent red skin and a slightly bitter flavor.",
     "Tangerine" => "A small, juicy citrus fruit with a bright orange skin and a sweet, tangy flavor.",
     "Watermelon" => "A large, juicy melon with a green skin and a sweet, watery flesh.",
     'Umbu' => 'Umbu is a tropical fruit that is native to Brazil. It has a tangy, slightly sour taste and is often used to make juice or ice cream. Umbu is rich in vitamin C, potassium, and calcium, and also contains antioxidants that may help protect against disease. It is a popular fruit in Brazil and is enjoyed both fresh and cooked.'
