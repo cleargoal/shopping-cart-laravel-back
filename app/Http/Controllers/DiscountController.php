@@ -7,10 +7,8 @@ use App\Http\Requests\UpdateDiscountRequest;
 use App\Http\Resources\CalculationResource;
 use App\Http\Resources\DiscountResource;
 use App\Models\Discount;
-use App\Services\DiscountService;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 
 class DiscountController extends Controller
 {
@@ -27,7 +25,7 @@ class DiscountController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreDiscountRequest  $request
+     * @param StoreDiscountRequest $request
      * @return Response
      */
     public function store(StoreDiscountRequest $request)
@@ -38,7 +36,8 @@ class DiscountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Discount  $discount
+     * @param Discount $discount
+     *
      * @return Response
      */
     public function show(Discount $discount)
@@ -49,8 +48,9 @@ class DiscountController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateDiscountRequest  $request
-     * @param  \App\Models\Discount  $discount
+     * @param UpdateDiscountRequest $request
+     * @param Discount              $discount
+     *
      * @return Response
      */
     public function update(UpdateDiscountRequest $request, Discount $discount)
@@ -61,7 +61,8 @@ class DiscountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Discount  $discount
+     * @param Discount  $discount
+     *
      * @return Response
      */
     public function destroy(Discount $discount)
