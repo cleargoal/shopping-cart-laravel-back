@@ -18,7 +18,6 @@ class Category extends Model
     /**
      * Interact with the Salad name
      *
-     * @param  float  $value
      * @return Attribute
      */
     public function title(): Attribute
