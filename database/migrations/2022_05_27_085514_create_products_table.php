@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('price')->comment('price in cents');
             $table->integer('quantity');
             $table->integer('rating');
+            $table->string('status')->default('cart');
             $table->timestamps();
 
             $table->foreignId('category_id')

@@ -2,18 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail as ContractMustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Ramsey\Uuid\UuidInterface;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Auth\MustVerifyEmail;
 
 class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
+//    use MustVerifyEmail;
 
     /**
      * The attributes that are mass assignable.
@@ -50,4 +53,14 @@ class User extends Authenticatable
         'anonymous' => 'string',
         'remember_token' => 'string',
     ];
+
+    /**
+     * Relation to Cart
+     *
+     * @return HasMany
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
 }
