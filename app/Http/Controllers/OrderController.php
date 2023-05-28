@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Http\Requests\UserCartRequest;
+use App\Http\Resources\CartResource;
 use App\Models\Order;
+use Illuminate\Http\JsonResponse;
 
 class OrderController extends Controller
 {
@@ -62,4 +65,17 @@ class OrderController extends Controller
     {
         //
     }
+
+    /**
+     * Show Cart by user uuid
+     *
+     * @param UserCartRequest $request
+     * @return JsonResponse
+     */
+    public function userCart(UserCartRequest $request): JsonResponse
+    {
+        $userCart = Order::with('products')->get();
+        return response()->json($userCart !== null ? (new CartResource($userCart)) : 'User not yet has cart');
+    }
+
 }
