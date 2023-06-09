@@ -75,7 +75,7 @@ class OrderController extends Controller
     public function userCart(UserCartRequest $request): JsonResponse
     {
         $userCart = Order::with('products')->get();
-        return response()->json($userCart !== null ? (new CartResource($userCart)) : 'User not yet has cart');
+        return response()->json($userCart !== null ? (new CartResource($userCart)) : 'The user doesn\'t have a cart yet');
     }
 
 }
