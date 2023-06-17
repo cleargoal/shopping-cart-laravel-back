@@ -8,24 +8,34 @@ use App\Http\Resources\ProductResource;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @param Request $request
+     *
+     * @return JsonResponse
      */
-    public function index()
+    public function index(Request $request): JsonResponse
     {
-        //
+        $products = Product::whereHas('category', function ($query) use ($request) {
+            $query->where('alias', $request['category']);
+        })
+            ->orderBy('title')
+            ->get();
+
+        return response()->json(ProductResource::collection($products));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreProductRequest $request
+     * @param StoreProductRequest $request
      * @return Response
      */
     public function store(StoreProductRequest $request)
@@ -70,21 +80,5 @@ class ProductController extends Controller
         //
     }
 
-    /**
-     * Products by category
-     *
-     * @param
-     * @return JsonResponse
-     */
-    public function productsByCategory($alias): JsonResponse
-    {
-        $products = Product::whereHas('category', function ($query) use ($alias) {
-            $query->where('alias', $alias);
-        })
-            ->orderBy('title')
-            ->get();
-
-        return response()->json(ProductResource::collection($products));
-    }
 
 }
