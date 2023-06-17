@@ -15,5 +15,5 @@ Route::resource('/orders', \App\Http\Controllers\OrderController::class);
 
 Route::get('/new-anonymous', [\App\Http\Controllers\UserController::class, 'createNewAnonymous'])->name('new.anonymous');
 Route::post('/user-cart/', [\App\Http\Controllers\OrderController::class, 'userCart'])->name('user.cart');
-Route::get('/products-by-category/{alias}', [\App\Http\Controllers\ProductController::class, 'productsByCategory'])->name('products.by.category');
+//Route::get('/products-by-category/{alias}', [\App\Http\Controllers\ProductController::class, 'productsByCategory'])->name('products.by.category');
 Route::get('/calculation', [\App\Http\Controllers\DiscountController::class, 'calculation'])->name('calculation');
