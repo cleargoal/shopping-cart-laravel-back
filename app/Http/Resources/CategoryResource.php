@@ -19,7 +19,7 @@ class CategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'label' => $this->title,
-            'to' => '/products?category=' . $this->alias,
+            'to' => '/products/' . $this->alias,
         ];
     }
 }
