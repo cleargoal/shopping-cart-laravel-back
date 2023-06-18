@@ -78,12 +78,13 @@ class UserController extends Controller
      */
     public function createNewAnonymous(): JsonResponse
     {
-        $uuhash = (string) Str::uuid();
-        $newUser = new User();
-        $newUser->anonymous = $uuhash;
-        $newUser->email = $uuhash;
-        $newUser->password = $uuhash;
-        $newUser->save();
+        //        $uuhash = (string) Str::uuid();
+        //        $newUser = new User();
+        //        $newUser->anonymous = $uuhash;
+        //        $newUser->email = $uuhash;
+        //        $newUser->password = $uuhash;
+        //        $newUser->save();
+        $newUser = User::factory()->create();
         return response()->json($newUser->anonymous);
     }
 }
