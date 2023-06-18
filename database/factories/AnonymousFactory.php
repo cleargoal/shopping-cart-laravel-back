@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Anonymous>
+ * @extends Factory<User>
  */
 class AnonymousFactory extends Factory
 {
@@ -14,10 +16,13 @@ class AnonymousFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
+        $uuhash = (string) Str::uuid();
         return [
-            //
+            'anonymous' => $uuhash,
+            'email' => $uuhash,
+            'password' => $uuhash,
         ];
     }
 }
